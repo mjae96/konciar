@@ -82,7 +82,6 @@
     <!-- 언어 선택 -->
     <div class="lang-switch">
       <button class="active" onclick="setLang('en', this)">EN</button>
-      <button onclick="setLang('jp', this)">日本語</button>
       <button onclick="setLang('cn', this)">中文</button>
     </div>
 
@@ -93,7 +92,7 @@
     <h1 id="headline">Help us build a better Konciar</h1>
 
     <a
-      id="buttonText"
+      id="surveyLink"
       class="button"
       href="https://docs.google.com/forms/d/e/1FAIpQLSe_NO1ln-tbOybI6Z9JEdnpPXDtWxVZRYI40b432W8JAnBHHg/viewform"
       target="_blank"
@@ -107,24 +106,22 @@
       en: {
         subtitle: "AI-powered concierge that helps visitors navigate Korea with ease.",
         headline: "Help us build a better Konciar",
-        button: "Take the survey"
-      },
-      jp: {
-        subtitle: "韓国をもっと簡単に楽しむためのAIコンシェルジュ。",
-        headline: "Konciarをより良くするためにご協力ください",
-        button: "アンケートに回答する"
+        button: "Take the survey",
+        formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSe_NO1ln-tbOybI6Z9JEdnpPXDtWxVZRYI40b432W8JAnBHHg/viewform"
       },
       cn: {
         subtitle: "帮助访客轻松探索韩国的 AI 智能管家。",
         headline: "帮助我们打造更好的 Konciar",
-        button: "填写问卷"
+        button: "填写问卷",
+        formUrl: "https://docs.google.com/forms/d/e/1FAIpQLScQWj27n1QpJhOu4qNAAaogJ2DI_M3HGLG2nXdQQi736eULZA/viewform"
       }
     };
 
     function setLang(lang, el) {
       document.getElementById("subtitle").innerText = content[lang].subtitle;
       document.getElementById("headline").innerText = content[lang].headline;
-      document.getElementById("buttonText").innerText = content[lang].button;
+      document.getElementById("surveyLink").innerText = content[lang].button;
+      document.getElementById("surveyLink").href = content[lang].formUrl;
 
       document.querySelectorAll(".lang-switch button").forEach(btn => {
         btn.classList.remove("active");
