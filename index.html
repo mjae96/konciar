@@ -24,7 +24,26 @@
       margin-bottom: 24px;
     }
 
-    /* 👇 기술 설명 문구 스타일 */
+    .lang-switch {
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin: 0 6px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .lang-switch button.active {
+      font-weight: 600;
+      color: #000;
+      text-decoration: underline;
+    }
+
     .subtitle {
       font-size: 15px;
       color: #555;
@@ -60,13 +79,21 @@
   <div class="container">
     <img src="logo.png" alt="Konciar Logo" />
 
-    <p class="subtitle">
+    <!-- 언어 선택 -->
+    <div class="lang-switch">
+      <button class="active" onclick="setLang('en', this)">EN</button>
+      <button onclick="setLang('jp', this)">日本語</button>
+      <button onclick="setLang('cn', this)">中文</button>
+    </div>
+
+    <p id="subtitle" class="subtitle">
       AI-powered concierge that helps visitors navigate Korea with ease.
     </p>
 
-    <h1>Help us build a better Konciar</h1>
+    <h1 id="headline">Help us build a better Konciar</h1>
 
     <a
+      id="buttonText"
       class="button"
       href="https://docs.google.com/forms/d/e/1FAIpQLSe_NO1ln-tbOybI6Z9JEdnpPXDtWxVZRYI40b432W8JAnBHHg/viewform"
       target="_blank"
@@ -74,5 +101,36 @@
       Take the survey
     </a>
   </div>
+
+  <script>
+    const content = {
+      en: {
+        subtitle: "AI-powered concierge that helps visitors navigate Korea with ease.",
+        headline: "Help us build a better Konciar",
+        button: "Take the survey"
+      },
+      jp: {
+        subtitle: "韓国をもっと簡単に楽しむためのAIコンシェルジュ。",
+        headline: "Konciarをより良くするためにご協力ください",
+        button: "アンケートに回答する"
+      },
+      cn: {
+        subtitle: "帮助访客轻松探索韩国的 AI 智能管家。",
+        headline: "帮助我们打造更好的 Konciar",
+        button: "填写问卷"
+      }
+    };
+
+    function setLang(lang, el) {
+      document.getElementById("subtitle").innerText = content[lang].subtitle;
+      document.getElementById("headline").innerText = content[lang].headline;
+      document.getElementById("buttonText").innerText = content[lang].button;
+
+      document.querySelectorAll(".lang-switch button").forEach(btn => {
+        btn.classList.remove("active");
+      });
+      el.classList.add("active");
+    }
+  </script>
 </body>
 </html>
