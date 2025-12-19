@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Konciar – Business</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #111;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 760px;
+      padding: 28px 18px;
+      box-sizing: border-box;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: #111;
+    }
+
+    .brand img {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+    }
+
+    .brand span {
+      font-weight: 700;
+      letter-spacing: -0.2px;
+    }
+
+    .lang-switch button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-left: 10px;
+      padding: 6px 2px;
+      color: #666;
+      font-size: 14px;
+    }
+
+    .lang-switch button.active {
+      font-weight: 700;
+      color: #000;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    h1 {
+      font-size: 34px;
+      line-height: 1.15;
+      letter-spacing: -0.6px;
+      margin: 0 0 10px 0;
+    }
+
+    .sub {
+      font-size: 16px;
+      color: #444;
+      line-height: 1.65;
+      margin: 0 0 22px 0;
+      max-width: 640px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin: 18px 0 24px 0;
+    }
+
+    .card {
+      border: 1px solid #e9e9e9;
+      border-radius: 16px;
+      padding: 14px 14px 12px;
+      background: #fafafa;
+    }
+
+    .card .t {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .card .d {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    .cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    a.btn {
+      display: inline-block;
+      padding: 14px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 650;
+      font-size: 15px;
+      border: 1px solid transparent;
+    }
+
+    a.primary {
+      background: #000;
+      color: #fff;
+    }
+
+    a.primary:hover { opacity: .9; }
+
+    a.secondary {
+      background: #f2f2f2;
+      color: #000;
+      border-color: #e5e5e5;
+    }
+
+    a.secondary:hover { background: #eaeaea; }
+
+    .note {
+      margin-top: 14px;
+      font-size: 12px;
+      color: #777;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 720px) {
+      .cards { grid-template-columns: 1fr; }
+      h1 { font-size: 30px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="/">
+        <img src="logo.png" alt="Konciar" />
+        <span>Konciar</span>
+      </a>
+
+      <div class="lang-switch">
+        <button class="active" onclick="setLang('en', this)">EN</button>
+        <button onclick="setLang('cn', this)">中文</button>
+      </div>
+    </div>
+
+    <h1 id="title">Business overview</h1>
+    <p id="desc" class="sub">
+      A quick overview of the problem we’re solving, our solution, and how Konciar can grow into a scalable product.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div id="c1t" class="t">Problem</div>
+        <div id="c1d" class="d">Visitors struggle with trustworthy local info and language barriers.</div>
+      </div>
+      <div class="card">
+        <div id="c2t" class="t">Solution</div>
+        <div id="c2d" class="d">AI concierge that helps people navigate Korea with confidence.</div>
+      </div>
+      <div class="card">
+        <div id="c3t" class="t">Next</div>
+        <div id="c3d" class="d">Validate demand → refine MVP → partnerships & growth.</div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <a
+        id="deckLink"
+        class="btn primary"
+        href="https://www.figma.com/make/ZNl39As4lLUfY94jQN3ueR/Konciar-BM?t=HUccVYbyckivBqeh-1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View full deck
+      </a>
+
+      <a class="btn secondary" href="/">
+        Back to home
+      </a>
+    </div>
+
+    <div id="note" class="note">
+      This deck is an early-stage working draft for feedback and iteration.
+    </div>
+  </div>
+
+  <script>
+    const copy = {
+      en: {
+        title: "Business overview",
+        desc: "A quick overview of the problem we’re solving, our solution, and how Konciar can grow into a scalable product.",
+        c1t: "Problem",
+        c1d: "Visitors struggle with trustworthy local info and language barriers.",
+        c2t: "Solution",
+        c2d: "AI concierge that helps people navigate Korea with confidence.",
+        c3t: "Next",
+        c3d: "Validate demand → refine MVP → partnerships & growth.",
+        deck: "View full deck",
+        note: "This deck is an early-stage working draft for feedback and iteration."
+      },
+      cn: {
+        title: "商业概览",
+        desc: "快速了解我们正在解决的问题、解决方案，以及 Konciar 如何成长为可规模化的产品。",
+        c1t: "痛点",
+        c1d: "游客很难获得可信的本地信息，并且存在语言障碍。",
+        c2t: "解决方案",
+        c2d: "AI 智能管家，帮助访客更轻松地在韩国出行与决策。",
+        c3t: "下一步",
+        c3d: "验证需求 → 打磨 MVP → 合作与增长。",
+        deck: "查看完整方案",
+        note: "该内容为早期版本，用于收集反馈并持续迭代。"
+      }
+    };
+
+    function setLang(lang, el) {
+      document.getElementById("title").innerText = copy[lang].title;
+      document.getElementById("desc").innerText = copy[lang].desc;
+      document.getElementById("c1t").innerText = copy[lang].c1t;
+      document.getElementById("c1d").innerText = copy[lang].c1d;
+      document.getElementById("c2t").innerText = copy[lang].c2t;
+      document.getElementById("c2d").innerText = copy[lang].c2d;
+      document.getElementById("c3t").innerText = copy[lang].c3t;
+      document.getElementById("c3d").innerText = copy[lang].c3d;
+      document.getElementById("deckLink").innerText = copy[lang].deck;
+      document.getElementById("note").innerText = copy[lang].note;
+
+      document.querySelectorAll(".lang-switch button").forEach(btn => btn.classList.remove("active"));
+      el.classList.add("active");
+    }
+  </script>
+</body>
+</html>
