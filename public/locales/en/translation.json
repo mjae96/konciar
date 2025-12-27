@@ -1,7 +1,88 @@
 {
   "hero": {
     "title": "We make phone calls and reservations in Korea for you",
-    "subtitle": "No Korean phone number. No language barrier.",
+    "subtitle": "No Korean phone number.\nNo language barrier.",
     "cta": "Request Concierge Help"
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "step1": {
+      "title": "Tell us what you need",
+      "desc": "Restaurant booking, takeout order, or any question"
+    },
+    "step2": {
+      "title": "We call them for you",
+      "desc": "Our concierge contacts the place in Korean"
+    },
+    "step3": {
+      "title": "Get confirmation by email",
+      "desc": "Usually within 3-5 minutes"
+    }
+  },
+  "services": {
+    "title": "What we can help with",
+    "items": {
+      "restaurant": "Restaurant reservations",
+      "hospital": "Hospital appointment",
+      "takeout": "Takeout orders",
+      "delivery": "Delivery orders",
+      "pet": "Pet-friendly",
+      "child": "Child-friendly",
+      "group": "Group seating",
+      "free": "Free-form inquiry"
+    }
+  },
+  "stats": {
+    "time": "3-5 min\nResponse time",
+    "language": "English\nFull support",
+    "secure": "Secure\n& trusted"
+  },
+  "footer": {
+    "title": "Ready to get started?",
+    "cta": "Request Concierge Help"
+  },
+  "requestType": {
+  "title": "What we can help with",
+  "requestTitle": "Choose request type",
+  "requestSubTitle": "What do you need help with?",
+  "selectOption": "Select one option",
+  "items": {
+    "restaurant": {
+      "title": "Restaurant Reservation",
+      "desc": "Book a table at your desired restaurant"
+    },
+    "takeout": {
+      "title": "Takeout Order",
+      "desc": "Order food for pickup"
+    },
+    "delivery": {
+      "title": "Delivery Order",
+      "desc": "Get food or items delivered to you"
+    },
+    "info": {
+      "title": "Information Check",
+      "desc": "Ask about parking, pets, hours, etc."
+    },
+    "hospital": {
+      "title": "Hospital Appointment",
+      "desc": "Schedule medical appointments or consultations"
+    },
+    "pet": {
+      "title": "Pet-friendly",
+      "desc": "Find places that allow pets"
+    },
+    "child": {
+      "title": "Child-friendly",
+      "desc": "Places with high chairs or kids menu"
+    },
+    "group": {
+      "title": "Group seating",
+      "desc": "Reservations for large groups"
+    },
+    "free": {
+      "title": "Free-form inquiry",
+      "desc": "Any other questions or special requests"
+    }
   }
+}
 }
