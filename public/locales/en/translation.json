@@ -47,42 +47,88 @@
     "requestSubTitle": "What do you need help with?",
     "selectOption": "Select one option",
     "items": {
-        "restaurant": {
+      "restaurant": {
         "title": "Restaurant Reservation",
         "desc": "Book a table at your desired restaurant"
-        },
-        "takeout": {
+      },
+      "takeout": {
         "title": "Takeout Order",
         "desc": "Order food for pickup"
-        },
-        "delivery": {
+      },
+      "delivery": {
         "title": "Delivery Order",
         "desc": "Get food or items delivered to you"
-        },
-        "info": {
+      },
+      "info": {
         "title": "Information Check",
         "desc": "Ask about parking, pets, hours, etc."
-        },
-        "hospital": {
+      },
+      "hospital": {
         "title": "Hospital Appointment",
         "desc": "Schedule medical appointments or consultations"
-        },
-        "pet": {
+      },
+      "pet": {
         "title": "Pet-friendly",
         "desc": "Find places that allow pets"
-        },
-        "child": {
+      },
+      "child": {
         "title": "Child-friendly",
         "desc": "Places with high chairs or kids menu"
-        },
-        "group": {
+      },
+      "group": {
         "title": "Group seating",
         "desc": "Reservations for large groups"
-        },
-        "free": {
+      },
+      "free": {
         "title": "Free-form inquiry",
         "desc": "Any other questions or special requests"
-        }
+      }
     }
+  },
+  "requestDetails": {
+    "title": "Request details",
+    "email": {
+      "label": "Your email address",
+      "placeholder": "your.email@example.com"
+    },
+    "store": {
+      "label": "Restaurant / Store name",
+      "placeholder": "e.g. Shilla Hotel"
+    },
+    "location": {
+      "label": "Location or address",
+      "placeholder": "Search address (e.g. Hotel Shilla)"
+    },
+    "delivery": {
+      "label": "Delivery address (Floor, Room no.)",
+      "detailLabel": "Delivery detail address",
+      "placeholder": "Search address (e.g. Hotel Shilla)",
+      "detailPlaceholder": "e.g. Room 1205, 12th Floor"
+    },
+    "dateTime": {
+      "label": "Requested date & time",
+      "placeholder": "e.g. December 25, 7:00 PM, 2 people"
+    },
+    "commonQuestions": {
+      "title": "Common questions to check",
+      "reservation": "Reservation availability",
+      "takeout": "Takeout available",
+      "delivery": "Delivery available",
+      "parking": "Parking available",
+      "pets": "Pets allowed"
+    },
+    "otherSpecifics": {
+      "label": "Other specific questions or details",
+      "placeholder": "e.g. Do they have vegan options?"
+    },
+    "description": {
+      "label": "Please describe your request in detail",
+      "placeholder": "Tell us what you need help with. Be as specific as possible - our concierge will read this and make the call for you.",
+      "example": "Example: \"I want to order 2 bibimbap and 1 bulgogi for takeout, pick up at 6 PM today\""
+    },
+    "footer": {
+      "button": "Send Request",
+      "notice": "Our concierge will contact you by email"
     }
+  }
 }

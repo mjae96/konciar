@@ -3,10 +3,11 @@ import Header from "../components/Header"
 import type { TOnly } from "../types"
 import { IoRestaurantOutline, IoBagHandleOutline, IoInformationOutline, IoMedicalOutline } from "react-icons/io5"
 import { TbTruckDelivery } from "react-icons/tb"
+import { useNavigate } from "react-router-dom"
 
 const REQUEST_OPTIONS = [
   {
-    key: "restaurant",
+    key: "reservation",
     icon: <IoRestaurantOutline />,
     styles: {
       activeBorder: "border-orange-400",
@@ -59,6 +60,15 @@ const REQUEST_OPTIONS = [
 
 const ChooseRequestPage = ({ t }: TOnly) => {
   const [selected, setSelected] = useState<string | null>(null)
+
+  const navigate = useNavigate()
+
+  const handleNext = () => {
+    if (selected) {
+      sessionStorage.setItem("requestType", selected)
+      navigate("/request-details")
+    }
+  }
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -116,7 +126,7 @@ const ChooseRequestPage = ({ t }: TOnly) => {
 
       {/* 하단 버튼 (선택 시 활성화) */}
       <div className="mt-auto p-4">
-        <button disabled={!selected} className={`w-full py-4 rounded-xl font-bold transition-colors ${selected ? "bg-slate-900 text-white" : "bg-gray-200 text-gray-400"}`}>
+        <button disabled={!selected} className={`w-full py-4 rounded-xl font-bold transition-colors ${selected ? "bg-slate-900 text-white" : "bg-gray-200 text-gray-400"}`} onClick={handleNext}>
           {selected ? "Next" : "Select an option"}
         </button>
       </div>

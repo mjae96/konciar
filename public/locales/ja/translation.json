@@ -84,5 +84,51 @@
         "desc": "その他、ご不明な点や特別なリクエスト"
       }
     }
+  },
+  "requestDetails": {
+    "title": "リクエスト詳細",
+    "email": {
+      "label": "メールアドレス",
+      "placeholder": "your.email@example.com"
+    },
+    "store": {
+      "label": "レストラン・店舗名",
+      "placeholder": "例：新羅ホテル"
+    },
+    "location": {
+      "label": "場所または住所",
+      "placeholder": "住所を検索（例：新羅ホテル）"
+    },
+    "delivery": {
+      "label": "配送先住所（階、部屋番号）",
+      "detailLabel": "配送先詳細住所",
+      "placeholder": "住所を検索（例：新羅ホテル）",
+      "detailPlaceholder": "例：1205号室、12階"
+    },
+    "dateTime": {
+      "label": "希望日時",
+      "placeholder": "例：12月25日 午後7:00、2名"
+    },
+    "commonQuestions": {
+      "title": "よくある確認事項",
+      "reservation": "予約の可否",
+      "takeout": "テイクアウト可能か",
+      "delivery": "デリバリー可能か",
+      "parking": "駐車場の有無",
+      "pets": "ペット同伴可能か"
+    },
+    "otherSpecifics": {
+      "label": "その他の具体的な質問や詳細",
+      "placeholder": "例：ヴィーガンメニューはありますか？"
+    },
+    "description": {
+      "label": "リクエストの詳細をご記入ください",
+      "placeholder": "どのようなお手伝いが必要か教えてください。できるだけ具体的にご記入いただければ、コンシェルジュが内容を確認し、代わりにお電話いたします。",
+      "example": "例：「ビビンバ2つとプルコギ1つをテイクアウトで注文したいです。今日の午後6時に取りに行きます」"
+    },
+    "footer": {
+      "button": "リクエストを送信",
+      "notice": "コンシェルジュよりメールでご連絡いたします"
+    }
   }
 }

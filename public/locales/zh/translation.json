@@ -84,5 +84,51 @@
         "desc": "其他任何问题或特殊需求"
       }
     }
+  },
+  "requestDetails": {
+    "title": "请求详情",
+    "email": {
+      "label": "您的电子邮件地址",
+      "placeholder": "your.email@example.com"
+    },
+    "store": {
+      "label": "餐厅 / 商店名称",
+      "placeholder": "例如：新罗酒店"
+    },
+    "location": {
+      "label": "位置或地址",
+      "placeholder": "搜索地址（例如：新罗酒店）"
+    },
+    "delivery": {
+      "label": "送货地址（楼层、房号）",
+      "detailLabel": "详细送货地址",
+      "placeholder": "搜索地址（例如：新罗酒店）",
+      "detailPlaceholder": "例如：1205室, 12楼"
+    },
+    "dateTime": {
+      "label": "请求日期和时间",
+      "placeholder": "例如：12月25日 晚上7:00, 2人"
+    },
+    "commonQuestions": {
+      "title": "常见确认事项",
+      "reservation": "是否有预约名额",
+      "takeout": "是否可以外带",
+      "delivery": "是否可以配送",
+      "parking": "是否有停车场",
+      "pets": "是否允许携带宠物"
+    },
+    "otherSpecifics": {
+      "label": "其他具体问题或细节",
+      "placeholder": "例如：是否有素食选项？"
+    },
+    "description": {
+      "label": "请详细描述您的请求",
+      "placeholder": "请告诉我们您需要什么帮助。请尽可能具体 - 我们的礼宾人员将阅读此内容并为您致电。",
+      "example": "示例：\"我想点2份石锅拌饭和1份烤肉外带，今天下午6点取餐\""
+    },
+    "footer": {
+      "button": "发送请求",
+      "notice": "我们的礼宾人员将通过电子邮件与您联系"
+    }
   }
 }
