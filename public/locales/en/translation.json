@@ -118,6 +118,10 @@
       "label": "Requested date & time",
       "placeholder": "e.g. December 25, 7:00 PM, 2 people"
     },
+    "preferredTime": {
+      "label": "Preferred Time (Optional)",
+      "placeholder": "e.g. Weekdays after 6 PM, or weekends"
+    },
     "commonQuestions": {
       "title": "Common questions to check",
       "reservation": "Reservation availability",

@@ -118,6 +118,10 @@
       "label": "请求日期和时间",
       "placeholder": "例如：12月25日 晚上7:00, 2人"
     },
+    "preferredTime": {
+      "label": "期望时间 (选填)",
+      "placeholder": "例如：周一至周五下午6点后，或周末"
+    },
     "commonQuestions": {
       "title": "常见确认事项",
       "reservation": "是否有预约名额",

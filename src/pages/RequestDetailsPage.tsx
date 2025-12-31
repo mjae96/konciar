@@ -18,6 +18,7 @@ const RequestDetailsPage = ({ t }: TOnly) => {
     deliveryAddress: "",
     deliveryDetailAddress: "",
     requestedDate: "",
+    preferredTime: "",
     otherSpecifics: "",
     description: "",
     commonQuestions: {
@@ -121,6 +122,7 @@ const RequestDetailsPage = ({ t }: TOnly) => {
       store_address: form.storeAddress || "None",
       delivery_info: requestType === "delivery" ? `${form.deliveryAddress} ${form.deliveryDetailAddress}`.trim() || "None" : "N/A",
       requested_date: form.requestedDate || "None",
+      preferred_time: form.preferredTime || "None",
       check_list: selectedQuestions || "None",
       other_questions: form.otherSpecifics || "None",
       message: form.description || "None",
@@ -235,7 +237,7 @@ const RequestDetailsPage = ({ t }: TOnly) => {
               <div className="flex flex-col gap-2">
                 <label htmlFor="deliveryDetailAddress" className="flex items-center gap-2 text-sm font-medium text-gray-700">
                   <MdOutlineHome className="text-gray-500 text-lg" />
-                  {t("requestDetails.delivery.detailLabel")}
+                  {t("requestDetails.preferredTime.label")}
                 </label>
                 <input
                   type="text"
@@ -243,7 +245,7 @@ const RequestDetailsPage = ({ t }: TOnly) => {
                   name="deliveryDetailAddress"
                   value={form.deliveryDetailAddress}
                   onChange={handleInputChange}
-                  placeholder={t("requestDetails.delivery.detailPlaceholder")}
+                  placeholder={t("requestDetails.preferredTime.placeholder")}
                   className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-indigo-300 shadow-sm"
                 />
               </div>
@@ -268,6 +270,22 @@ const RequestDetailsPage = ({ t }: TOnly) => {
                   value={form.requestedDate}
                   onChange={handleInputChange}
                   placeholder={t("requestDetails.dateTime.placeholder")}
+                  className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-blue-300 shadow-sm"
+                />
+              </div>
+
+              <div className="flex flex-col gap-2">
+                <label htmlFor="preferredTime" className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                  <MdCalendarToday className="text-blue-300 text-lg" />
+                  {t("requestDetails.preferredTime.label") || "Preferred Time & Days"}
+                </label>
+                <input
+                  type="text"
+                  id="preferredTime"
+                  name="preferredTime"
+                  value={form.preferredTime}
+                  onChange={handleInputChange}
+                  placeholder={t("requestDetails.preferredTime.placeholder") || "e.g. Weekdays after 6 PM, or Weekends"}
                   className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-blue-300 shadow-sm"
                 />
               </div>

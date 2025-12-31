@@ -118,6 +118,10 @@
       "label": "希望日時",
       "placeholder": "例：12月25日 午後7:00、2名"
     },
+    "preferredTime": {
+      "label": "ご希望の時間帯 (任意)",
+      "placeholder": "例：平日18時以降、または土日祝など"
+    },
     "commonQuestions": {
       "title": "よくある確認事項",
       "reservation": "予約の可否",
