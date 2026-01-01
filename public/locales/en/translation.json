@@ -142,6 +142,13 @@
     "footer": {
       "button": "Send Request",
       "notice": "Our concierge will contact you by email"
+    },
+    "requestType": {
+      "reservation": "Restaurant Reservation",
+      "takeout": "Takeout Order",
+      "delivery": "Delivery Order",
+      "hospital": "Hospital Appointment",
+      "info": "Information Check"
     }
   }
 }

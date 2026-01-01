@@ -142,6 +142,13 @@
     "footer": {
       "button": "リクエストを送信",
       "notice": "コンシェルジュよりメールでご連絡いたします"
+    },
+    "requestType": {
+      "reservation": "飲食店予約",
+      "takeout": "テイクアウト",
+      "delivery": "デリバリー",
+      "hospital": "病院予約",
+      "info": "情報確認"
     }
   }
 }

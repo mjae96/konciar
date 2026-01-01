@@ -142,6 +142,13 @@
     "footer": {
       "button": "发送请求",
       "notice": "我们的礼宾人员将通过电子邮件与您联系"
+    },
+    "requestType": {
+      "reservation": "餐厅订座",
+      "takeout": "外带自取",
+      "delivery": "外卖配送",
+      "hospital": "医院挂号",
+      "info": "信息查询"
     }
   }
 }
