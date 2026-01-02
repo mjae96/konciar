@@ -1,0 +1,160 @@
+{
+  "hero": {
+    "title": "We make phone calls and reservations in Korea for you",
+    "subtitle": "No Korean phone number.\nNo language barrier.",
+    "cta": "Request Concierge Help"
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "step1": {
+      "title": "Tell us what you need",
+      "desc": "Restaurant booking, takeout order, or any question"
+    },
+    "step2": {
+      "title": "We call them for you",
+      "desc": "Our concierge contacts the place in Korean"
+    },
+    "step3": {
+      "title": "Get confirmation by email",
+      "desc": "Usually within 3-5 minutes"
+    }
+  },
+  "services": {
+    "title": "What we can help with",
+    "items": {
+      "restaurant": "Restaurant reservations",
+      "hospital": "Hospital appointment",
+      "takeout": "Takeout orders",
+      "delivery": "Delivery orders",
+      "pet": "Pet-friendly",
+      "child": "Child-friendly",
+      "group": "Group seating",
+      "free": "Free-form inquiry"
+    }
+  },
+  "stats": {
+    "time": "3-5 min\nResponse time",
+    "language": "English\nFull support",
+    "secure": "Secure\n& trusted"
+  },
+  "footer": {
+    "title": "Ready to get started?",
+    "cta": "Request Concierge Help"
+  },
+  "requestType": {
+    "title": "What we can help with",
+    "requestTitle": "Choose request type",
+    "requestSubTitle": "What do you need help with?",
+    "selectOption": "Select one option",
+    "nextStep": "Next Step",
+    "items": {
+      "reservation": {
+        "title": "Restaurant Reservation",
+        "desc": "Book a table at your desired restaurant"
+      },
+      "takeout": {
+        "title": "Takeout Order",
+        "desc": "Order food for pickup"
+      },
+      "delivery": {
+        "title": "Delivery Order",
+        "desc": "Get food or items delivered to you"
+      },
+      "info": {
+        "title": "Information Check",
+        "desc": "Ask about parking, pets, hours, etc."
+      },
+      "hospital": {
+        "title": "Hospital Appointment",
+        "desc": "Schedule medical appointments or consultations"
+      },
+      "pet": {
+        "title": "Pet-friendly",
+        "desc": "Find places that allow pets"
+      },
+      "child": {
+        "title": "Child-friendly",
+        "desc": "Places with high chairs or kids menu"
+      },
+      "group": {
+        "title": "Group seating",
+        "desc": "Reservations for large groups"
+      },
+      "free": {
+        "title": "Free-form inquiry",
+        "desc": "Any other questions or special requests"
+      }
+    }
+  },
+  "requestDetails": {
+    "title": "Request details",
+    "sending": "Sending...",
+    "errorMessage": "Failed to send request. Please try again.",
+    "success": {
+      "title": "Request Sent!",
+      "description": "Our concierge will review your request and contact you via email shortly.",
+      "button": "Back to Home"
+    },
+    "email": {
+      "label": "Your email address",
+      "placeholder": "youremail@example.com",
+      "error": "Please enter a valid email address"
+    },
+    "store": {
+      "label": "Restaurant / Store name",
+      "placeholder": "e.g. Myeongdong Kyoja"
+    },
+    "location": {
+      "label": "Location or address",
+      "placeholder": "Enter restaurant or store name"
+    },
+    "delivery": {
+      "label": "Delivery address (Floor, Room no.)",
+      "detailLabel": "Delivery detail address",
+      "placeholder": "Enter hotel name or accommodation address",
+      "detailPlaceholder": "e.g. Room 1205, 12th Floor"
+    },
+    "dateTime": {
+      "label": "Requested date & time",
+      "placeholder": "e.g. December 25, 7:00 PM, 2 people"
+    },
+    "preferredTime": {
+      "label": "Preferred Time (Optional)",
+      "placeholder": "e.g. Weekdays after 6 PM, or weekends"
+    },
+    "commonQuestions": {
+      "title": "Common questions to check",
+      "reservation": "Reservation availability",
+      "takeout": "Takeout available",
+      "delivery": "Delivery available",
+      "parking": "Parking available",
+      "pets": "Pets allowed"
+    },
+    "otherSpecifics": {
+      "label": "Other specific questions or details",
+      "placeholder": "ex. Do they have vegan options?"
+    },
+    "description": {
+      "label": "Please describe your request in detail",
+      "placeholder": "Tell us what you need help with. Be as specific as possible - our concierge will read this and make the call for you.",
+      "example": "Example: \"I want to order 2 bibimbap and 1 bulgogi for takeout, pick up at 6 PM today\""
+    },
+    "footer": {
+      "button": "Send Request",
+      "notice": "Our concierge will contact you by email"
+    },
+    "requestType": {
+      "reservation": "Restaurant Reservation",
+      "takeout": "Takeout Order",
+      "delivery": "Delivery Order",
+      "hospital": "Hospital Appointment",
+      "info": "Information Check"
+    }
+  },
+  "review": {
+    "title": "We need your help!",
+    "description": "We are testing this service to prepare for our startup launch. We’d be truly grateful for your feedback—both criticism and positive responses are incredibly valuable to us.",
+    "button": "Take a 30-sec Survey",
+    "close": "Maybe later"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "hero": {
+    "title": "我们为您代办韩国境内的电话预约",
+    "subtitle": "无需韩国手机号。\n无语言障碍。",
+    "cta": "申请人工礼宾服务"
+  },
+  "howItWorks": {
+    "title": "服务流程",
+    "step1": {
+      "title": "告知您的需求",
+      "desc": "餐厅预订、外卖点餐或任何咨询"
+    },
+    "step2": {
+      "title": "我们为您致电",
+      "desc": "我们的礼宾人员将用韩语为您联系"
+    },
+    "step3": {
+      "title": "通过邮件确认",
+      "desc": "通常在3-5分钟内完成"
+    }
+  },
+  "services": {
+    "title": "我们可以帮您",
+    "items": {
+      "restaurant": "餐厅预订",
+      "hospital": "医院预约",
+      "takeout": "外卖打包",
+      "delivery": "外卖配送",
+      "pet": "宠物友好设施",
+      "child": "儿童友好设施",
+      "group": "团体座位",
+      "free": "自由咨询"
+    }
+  },
+  "stats": {
+    "time": "3-5 分钟\n响应速度",
+    "language": "中文\n全程支持",
+    "secure": "安全\n可靠"
+  },
+  "footer": {
+    "title": "准备好了吗？",
+    "cta": "申请人工礼宾服务"
+  },
+  "requestType": {
+    "title": "我们可以提供的帮助",
+    "requestTitle": "选择请求类型",
+    "requestSubTitle": "您需要什么帮助？",
+    "selectOption": "请选择一个选项",
+    "nextStep": "下一步",
+    "items": {
+      "reservation": {
+        "title": "餐厅预订",
+        "desc": "为您预订心仪餐厅的座位"
+      },
+      "takeout": {
+        "title": "外卖自提",
+        "desc": "预订到店自提的食物"
+      },
+      "delivery": {
+        "title": "外送服务",
+        "desc": "将食物或物品送到您手中"
+      },
+      "info": {
+        "title": "信息查询",
+        "desc": "咨询停车场、宠物入内、营业时间 등"
+      },
+      "hospital": {
+        "title": "医院预约",
+        "desc": "安排医疗预约或咨询"
+      },
+      "pet": {
+        "title": "宠物友好",
+        "desc": "查找允许携带宠物的场所"
+      },
+      "child": {
+        "title": "儿童友好",
+        "desc": "适合儿童就坐或提供儿童餐的场所"
+      },
+      "group": {
+        "title": "团体座",
+        "desc": "多人团体的席位预订"
+      },
+      "free": {
+        "title": "自由咨询",
+        "desc": "其他任何问题或特殊需求"
+      }
+    }
+  },
+  "requestDetails": {
+    "title": "请求详情",
+    "sending": "正在发送...",
+    "errorMessage": "发送失败，请稍后再试。",
+    "success": {
+      "title": "请求已发送！",
+      "description": "我们的礼宾人员将尽快审核您的需求，并通过电子邮件与您联系。",
+      "button": "回到首页"
+    },
+    "email": {
+      "label": "您的电子邮件地址",
+      "placeholder": "youremail@example.com",
+      "error": "请输入有效的电子邮件地址"
+    },
+    "store": {
+      "label": "餐厅 / 商店名称",
+      "placeholder": "例如：明洞饺子本店"
+    },
+    "location": {
+      "label": "位置或地址",
+      "placeholder": "请输入餐厅或商店名称"
+    },
+    "delivery": {
+      "label": "送货地址（楼层、房号）",
+      "detailLabel": "详细送货地址",
+      "placeholder": "请输入酒店名称或住宿地址",
+      "detailPlaceholder": "例如：1205室, 12楼"
+    },
+    "dateTime": {
+      "label": "请求日期和时间",
+      "placeholder": "例如：12月25日 晚上7:00, 2人"
+    },
+    "preferredTime": {
+      "label": "期望时间 (选填)",
+      "placeholder": "例如：周一至周五下午6点后，或周末"
+    },
+    "commonQuestions": {
+      "title": "常见确认事项",
+      "reservation": "是否有预约名额",
+      "takeout": "是否可以外带",
+      "delivery": "是否可以配送",
+      "parking": "是否有停车场",
+      "pets": "是否允许携带宠物"
+    },
+    "otherSpecifics": {
+      "label": "其他具体问题或细节",
+      "placeholder": "例如：是否有素食选项？"
+    },
+    "description": {
+      "label": "请详细描述您的请求",
+      "placeholder": "请告诉我们您需要什么帮助。请尽可能具体 - 我们的礼宾人员将阅读此内容并为您致电。",
+      "example": "示例：\"我想点2份石锅拌饭和1份烤肉外带，今天下午6点取餐\""
+    },
+    "footer": {
+      "button": "发送请求",
+      "notice": "我们的礼宾人员将通过电子邮件与您联系"
+    },
+    "requestType": {
+      "reservation": "餐厅订座",
+      "takeout": "外带自取",
+      "delivery": "外卖配送",
+      "hospital": "医院挂号",
+      "info": "信息查询"
+    }
+  },
+  "review": {
+    "title": "我们需要您的帮助！",
+    "description": "我们正在测试此服务，为创业做准备。如果您能抽出一点时间分享您的反馈，我们将不胜感激。无论是批评还是肯定，对我们来说都非常有价值。",
+    "button": "参与 30 秒问卷",
+    "close": "以后再说"
+  }
+}
