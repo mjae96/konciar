@@ -21,7 +21,12 @@ const SuccessPage = ({ t }: TOnly) => {
   }
 
   const handleReviewClick = () => {
-    const googleFormUrl = "" // 연결 필요
+    let googleFormUrl = import.meta.env.VITE_SURVEY_EN_URL
+    if (localStorage.getItem("i18nextLng") === "zh") {
+      googleFormUrl = import.meta.env.VITE_SURVEY_ZH_URL
+    } else if (localStorage.getItem("i18nextLng") === "ja") {
+      googleFormUrl = import.meta.env.VITE_SURVEY_JA_URL
+    }
     window.open(googleFormUrl, "_blank")
     localStorage.setItem("hasParticipatedReview", "true")
     setShowModal(false)
@@ -56,19 +61,16 @@ const SuccessPage = ({ t }: TOnly) => {
               </div>
 
               <div className="flex flex-col gap-3">
-                <h2 className="text-xl font-bold text-gray-900">{t("requestDetails.review.title") || "Share Your Feedback!"}</h2>
-                <p className="text-sm text-gray-600 leading-relaxed px-2">
-                  {t("requestDetails.review.description") ||
-                    "We are testing this service to prepare for our startup launch. We’d be truly grateful for your feedback—both criticism and positive responses are incredibly valuable to us."}
-                </p>
+                <h2 className="text-xl font-bold text-gray-900">{t("review.title") || "Share Your Feedback!"}</h2>
+                <p className="text-sm text-gray-600 leading-relaxed px-2">{t("review.description")}</p>
               </div>
 
               <div className="flex flex-col w-full gap-2 mt-2">
                 <button onClick={handleReviewClick} className="w-full py-4 bg-orange-500 text-white rounded-2xl font-bold hover:bg-orange-600 transition-colors shadow-orange-200 shadow-lg">
-                  {t("requestDetails.review.button") || "Take a 1-min Survey"}
+                  {t("review.button")}
                 </button>
                 <button onClick={closeModal} className="w-full py-3 text-gray-400 text-sm font-medium hover:text-gray-600 transition-colors">
-                  {t("requestDetails.review.close") || "Maybe later"}
+                  {t("review.close")}
                 </button>
               </div>
             </div>

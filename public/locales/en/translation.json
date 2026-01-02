@@ -150,5 +150,11 @@
       "hospital": "Hospital Appointment",
       "info": "Information Check"
     }
+  },
+  "review": {
+    "title": "We need your help!",
+    "description": "We are testing this service to prepare for our startup launch. We’d be truly grateful for your feedback—both criticism and positive responses are incredibly valuable to us.",
+    "button": "Take a 30-sec Survey",
+    "close": "Maybe later"
   }
 }
