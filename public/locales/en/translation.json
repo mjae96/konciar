@@ -118,8 +118,8 @@
       "label": "Requested date & time",
       "placeholder": "e.g. December 25, 7:00 PM, 2 people"
     },
-    "preferredTime": {
-      "label": "Preferred Time (Optional)",
+    "alternativeTime": {
+      "label": "Alternative Time (Please enter another available time)",
       "placeholder": "e.g. Weekdays after 6 PM, or weekends"
     },
     "commonQuestions": {

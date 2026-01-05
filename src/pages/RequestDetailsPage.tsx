@@ -18,7 +18,7 @@ const RequestDetailsPage = ({ t }: TOnly) => {
     deliveryAddress: "",
     deliveryDetailAddress: "",
     requestedDate: "",
-    preferredTime: "",
+    alternativeTime: "",
     otherSpecifics: "",
     description: "",
     commonQuestions: {
@@ -122,7 +122,7 @@ const RequestDetailsPage = ({ t }: TOnly) => {
       store_address: form.storeAddress || "None",
       delivery_info: requestType === "delivery" ? `${form.deliveryAddress} ${form.deliveryDetailAddress}`.trim() || "None" : "N/A",
       requested_date: form.requestedDate || "None",
-      preferred_time: form.preferredTime || "None",
+      alternative_time: form.alternativeTime || "None",
       check_list: selectedQuestions || "None",
       other_questions: form.otherSpecifics || "None",
       message: form.description || "None",
@@ -237,7 +237,7 @@ const RequestDetailsPage = ({ t }: TOnly) => {
               <div className="flex flex-col gap-2">
                 <label htmlFor="deliveryDetailAddress" className="flex items-center gap-2 text-sm font-medium text-gray-700">
                   <MdOutlineHome className="text-gray-500 text-lg" />
-                  {t("requestDetails.preferredTime.label")}
+                  {t("requestDetails.alternativeTime.label")}
                 </label>
                 <input
                   type="text"
@@ -245,7 +245,7 @@ const RequestDetailsPage = ({ t }: TOnly) => {
                   name="deliveryDetailAddress"
                   value={form.deliveryDetailAddress}
                   onChange={handleInputChange}
-                  placeholder={t("requestDetails.preferredTime.placeholder")}
+                  placeholder={t("requestDetails.alternativeTime.placeholder")}
                   className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-indigo-300 shadow-sm"
                 />
               </div>
@@ -275,17 +275,17 @@ const RequestDetailsPage = ({ t }: TOnly) => {
               </div>
 
               <div className="flex flex-col gap-2">
-                <label htmlFor="preferredTime" className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                <label htmlFor="alternativeTime" className="flex items-center gap-2 text-sm font-medium text-gray-700">
                   <MdCalendarToday className="text-blue-300 text-lg" />
-                  {t("requestDetails.preferredTime.label") || "Preferred Time & Days"}
+                  {t("requestDetails.alternativeTime.label") || "alternativeTime Time & Days"}
                 </label>
                 <input
                   type="text"
-                  id="preferredTime"
-                  name="preferredTime"
-                  value={form.preferredTime}
+                  id="alternativeTime"
+                  name="alternativeTime"
+                  value={form.alternativeTime}
                   onChange={handleInputChange}
-                  placeholder={t("requestDetails.preferredTime.placeholder") || "e.g. Weekdays after 6 PM, or Weekends"}
+                  placeholder={t("requestDetails.alternativeTime.placeholder") || "e.g. Weekdays after 6 PM, or Weekends"}
                   className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-blue-300 shadow-sm"
                 />
               </div>

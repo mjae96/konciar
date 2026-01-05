@@ -118,8 +118,8 @@
       "label": "请求日期和时间",
       "placeholder": "例如：12月25日 晚上7:00, 2人"
     },
-    "preferredTime": {
-      "label": "期望时间 (选填)",
+    "alternativeTime": {
+      "label": "其他方便的时间（请输入其他可以的时间）",
       "placeholder": "例如：周一至周五下午6点后，或周末"
     },
     "commonQuestions": {
