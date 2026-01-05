@@ -65,7 +65,7 @@
         "desc": "Ask about parking, pets, hours, etc."
       },
       "hospital": {
-        "title": "Hospital Appointment",
+        "title": "Doctor’s Appointment",
         "desc": "Schedule medical appointments or consultations"
       },
       "pet": {
