@@ -21,7 +21,7 @@ i18n
     },
 
     detection: {
-      order: ["queryString", "cookie", "localStorage", "navigator"],
+      order: ["queryString", "cookie", "localStorage"],
       caches: ["localStorage"], // 사용자가 선택한 언어를 로컬스토리지에 저장
     },
   })

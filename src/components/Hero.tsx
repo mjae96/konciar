@@ -1,12 +1,7 @@
-import { useEffect } from "react"
 import type { TAndI18n } from "../types"
 import RequestConciergeButton from "./RequestConciergeButton"
 
 const Hero = ({ t, i18n }: TAndI18n) => {
-  useEffect(() => {
-    toggleLanguage("en")
-  }, [])
-
   const languages = [
     { code: "en", label: "English", lang: "en-US" },
     { code: "zh", label: "中文", lang: "zh-Hans" },
