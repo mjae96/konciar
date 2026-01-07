@@ -174,6 +174,7 @@
     "searchDelivery": "配送先を検索",
     "placeholder": "場所や住所を入力してください",
     "noResults": "検索結果がありません",
-    "enterKeyword": "検索ワードを入力してください"
+    "enterKeyword": "検索ワードを入力してください",
+    "manually": "直接入力する"
   }
 }

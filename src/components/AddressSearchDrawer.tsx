@@ -54,6 +54,23 @@ const AddressSearchDrawer = ({ isOpen, setIsOpen, onSelect, title }: AddressSear
     return () => clearTimeout(delayDebounceFn)
   }, [keyword])
 
+  const handleManualInput = () => {
+    const manualAddress = keyword.trim()
+    if (!manualAddress) {
+      alert(t("addressSearch.enterKeyword")) // 혹은 적절한 메시지
+      return
+    }
+
+    // AddressItem 형식에 맞춰 데이터 생성
+    const newItem: AddressItem = {
+      address: manualAddress,
+      roadAddress: "직접 입력",
+    }
+
+    onSelect(newItem)
+    setIsOpen(false)
+  }
+
   return (
     <Drawer.Root open={isOpen} onOpenChange={setIsOpen}>
       <Drawer.Portal>
@@ -99,10 +116,22 @@ const AddressSearchDrawer = ({ isOpen, setIsOpen, onSelect, title }: AddressSear
                     </div>
                   </li>
                 ))}
+                <li className="p-4 mt-2 text-center active:bg-gray-50" onClick={handleManualInput}>
+                  <p className="text-blue-500 font-medium text-sm">
+                    "{keyword}" {t("addressSearch.manually")}
+                  </p>
+                </li>
               </ul>
             ) : (
               <div className="flex flex-col items-center justify-center h-full text-gray-400 py-10">
                 <p className="text-sm text-center">{keyword ? t("addressSearch.noResults") : t("addressSearch.enterKeyword")}</p>
+                {keyword && (
+                  <button className="p-4 mt-4 text-center active:bg-gray-50" onClick={handleManualInput}>
+                    <p className="text-blue-500 font-medium text-sm">
+                      "{keyword}" {t("addressSearch.manually")}
+                    </p>
+                  </button>
+                )}
               </div>
             )}
           </section>

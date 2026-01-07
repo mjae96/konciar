@@ -26,13 +26,6 @@ export interface BookingPickerDrawerProps {
 export interface AddressItem {
   address: string
   roadAddress: string
-  jibunAddress: string
-}
-
-export interface AddressItem {
-  address: string
-  roadAddress: string
-  jibunAddress: string
 }
 
 export interface AddressSearchDrawerProps {

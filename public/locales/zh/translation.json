@@ -174,6 +174,7 @@
     "searchDelivery": "搜索送货地址",
     "placeholder": "输入地点或地址",
     "noResults": "未找到搜索结果",
-    "enterKeyword": "请输入关键词进行搜索"
+    "enterKeyword": "请输入关键词进行搜索",
+    "manually": "手动输入"
   }
 }
