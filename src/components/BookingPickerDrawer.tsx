@@ -79,7 +79,7 @@ const BookingPickerDrawer = ({ isOpen, setIsOpen, onConfirm, initialData }: Book
     <Drawer.Root open={isOpen} onOpenChange={setIsOpen}>
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40 z-50" />
-        <Drawer.Content className="fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl p-6 outline-none z-50 max-h-[92vh] flex flex-col scroll-none">
+        <Drawer.Content className="fixed bottom-0 left-0 right-0 bg-white rounded-t-3xl p-6 outline-none z-50 h-[90%] flex flex-col scroll-none">
           {/* 상단 핸들 바 */}
           <div className="mx-auto w-12 h-1.5 shrink-0 rounded-full bg-gray-300 mb-6" />
 
