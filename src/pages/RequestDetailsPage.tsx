@@ -1,15 +1,14 @@
 import { useEffect, useState, type ChangeEvent } from "react"
 import Header from "../components/Header"
 import { MdOutlineMail, MdOutlineStorefront, MdOutlineHome, MdCalendarToday } from "react-icons/md"
-import { TbBrandGoogleMaps } from "react-icons/tb"
-import type { TOnly } from "../types"
+import type { AddressItem, TOnly } from "../types"
 import { loadGoogleMaps } from "../components/GoogleMapsLoader"
 import emailjs from "@emailjs/browser"
 import { useNavigate } from "react-router-dom"
 import toast from "react-hot-toast"
-import { useGoogleAutocomplete } from "../hooks/useGoogleAutoComplete"
 import { format } from "date-fns"
 import BookingPickerDrawer from "../components/BookingPickerDrawer"
+import AddressSearchDrawer from "../components/AddressSearchDrawer"
 
 const RequestDetailsPage = ({ t }: TOnly) => {
   const [requestType, setRequestType] = useState<string>("")
@@ -33,37 +32,27 @@ const RequestDetailsPage = ({ t }: TOnly) => {
     },
   })
   const [isSending, setIsSending] = useState<boolean>(false)
-  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false)
+  const [isCalendarDrawerOpen, setIsCalendarDrawerOpen] = useState<boolean>(false)
+  const [isAddressDrawerOpen, setIsAddressDrawerOpen] = useState<boolean>(false)
+  const [activeAddressType, setActiveAddressType] = useState<"store" | "delivery">("store")
   const navigate = useNavigate()
 
-  // Google Places Autocomplete 설정
-  const storeAddressRef = useGoogleAutocomplete({
-    onPlaceSelected: (place) => {
-      setForm((prev) => ({ ...prev, storeAddress: place.formatted_address || "" }))
-
-      if (storeAddressRef.current) {
-        storeAddressRef.current.value = place.formatted_address || ""
+  const handleAddressSelect = (selectedItem: AddressItem) => {
+    setForm((prev) => {
+      if (activeAddressType === "store") {
+        return {
+          ...prev,
+          storeName: selectedItem.address,
+          storeAddress: selectedItem.roadAddress,
+        }
+      } else {
+        return {
+          ...prev,
+          deliveryAddress: selectedItem.roadAddress + " " + (selectedItem.address || ""),
+        }
       }
-    },
-    options: {
-      types: ["geocode", "establishment"],
-      componentRestrictions: { country: "kr" },
-    },
-  })
-
-  const deliveryAddressRef = useGoogleAutocomplete({
-    onPlaceSelected: (place) => {
-      setForm((prev) => ({ ...prev, deliveryAddress: place.formatted_address || "" }))
-
-      if (deliveryAddressRef.current) {
-        deliveryAddressRef.current.value = place.formatted_address || ""
-      }
-    },
-    options: {
-      types: ["geocode", "establishment"],
-      componentRestrictions: { country: "kr" },
-    },
-  })
+    })
+  }
 
   useEffect(() => {
     setRequestType(sessionStorage.getItem("requestType") || "")
@@ -136,7 +125,7 @@ const RequestDetailsPage = ({ t }: TOnly) => {
       store_address: form.storeAddress || "None",
       delivery_info: requestType === "delivery" ? `${form.deliveryAddress} ${form.deliveryDetailAddress}`.trim() || "None" : "N/A",
       requested_date: form.requestedDate || "None",
-      guests: form.guests.toString(),
+      guests: requestType === "reservation" ? form.guests.toString() : "None",
       alternative_time: form.alternativeTime || "None",
       check_list: selectedQuestions || "None",
       other_questions: form.otherSpecifics || "None",
@@ -193,35 +182,22 @@ const RequestDetailsPage = ({ t }: TOnly) => {
 
           {/* Store Name Section */}
           <section className="flex flex-col gap-2">
-            <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-              <MdOutlineStorefront className="text-green-500 text-lg" />
-              {requestType === "hospital" ? t("requestDetails.store.hospital") : t("requestDetails.store.label")} <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              name="storeName"
-              value={form.storeName}
-              onChange={handleInputChange}
-              placeholder={t("requestDetails.store.placeholder")}
-              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-green-300 shadow-sm"
-            />
-          </section>
-
-          {/* Store Location Section */}
-          <section className="flex flex-col gap-2">
-            <h2 className="sr-only">Restaurant / Store name</h2>
             <label htmlFor="storeLocationByGoogleMap" className="flex items-center gap-2 text-sm font-medium text-gray-700">
-              <TbBrandGoogleMaps className="text-gray-400 text-lg" />
-              {t("requestDetails.location.label")}
+              <MdOutlineStorefront className="text-green-500 text-lg" />
+              {t("requestDetails.store.label")} <span className="text-red-500">*</span>
             </label>
             <input
-              ref={storeAddressRef}
               id="storeLocationByGoogleMap"
               type="text"
+              readOnly
+              // 선택된 주소를 표시하되, 아직 선택 안 됐다면 플레이스홀더 표시
+              value={form.storeName || ""}
+              onClick={() => {
+                setActiveAddressType("store")
+                setIsAddressDrawerOpen(true)
+              }}
               placeholder={t("requestDetails.location.placeholder")}
-              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-indigo-300 transition-all shadow-sm"
-              autoComplete="off"
-              defaultValue={form.storeAddress}
+              className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-green-300 transition-all shadow-sm cursor-pointer"
             />
           </section>
 
@@ -239,20 +215,23 @@ const RequestDetailsPage = ({ t }: TOnly) => {
                   {t("requestDetails.delivery.label")} <span className="text-red-500">*</span>
                 </label>
                 <input
-                  ref={deliveryAddressRef}
                   id="deliveryAddressByGoogleMap"
                   type="text"
+                  readOnly
+                  value={form.deliveryAddress}
+                  onClick={() => {
+                    setActiveAddressType("delivery")
+                    setIsAddressDrawerOpen(true)
+                  }}
                   placeholder={t("requestDetails.delivery.placeholder")}
-                  className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-indigo-300 transition-all shadow-sm"
-                  autoComplete="off"
-                  defaultValue={form.deliveryAddress}
+                  className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-indigo-300 transition-all shadow-sm cursor-pointer"
                 />
               </div>
 
               <div className="flex flex-col gap-2">
                 <label htmlFor="deliveryDetailAddress" className="flex items-center gap-2 text-sm font-medium text-gray-700">
                   <MdOutlineHome className="text-gray-500 text-lg" />
-                  {t("requestDetails.alternativeTime.label")}
+                  {t("requestDetails.delivery.detailLabel")}
                 </label>
                 <input
                   type="text"
@@ -260,7 +239,7 @@ const RequestDetailsPage = ({ t }: TOnly) => {
                   name="deliveryDetailAddress"
                   value={form.deliveryDetailAddress}
                   onChange={handleInputChange}
-                  placeholder={t("requestDetails.alternativeTime.placeholder")}
+                  placeholder={t("requestDetails.delivery.detailPlaceholder")}
                   className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-indigo-300 shadow-sm"
                 />
               </div>
@@ -270,46 +249,45 @@ const RequestDetailsPage = ({ t }: TOnly) => {
           )}
 
           {/* Date & Time Section */}
-          {requestType === "reservation" ||
-            (requestType === "hospital" && (
-              <section className="flex flex-col gap-8" aria-labelledby="date-time-header">
-                <h2 className="sr-only">Reservation Information</h2>
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="requestedDate" className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                    <MdCalendarToday className="text-blue-500 text-lg" />
-                    {t("requestDetails.dateTime.label")} <span className="text-red-500">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="requestedDate"
-                    name="requestedDate"
-                    value={form.requestedDate ? `${form.requestedDate} ${form.guests}${t("reservation.numbers") || "ppl"}` : ""}
-                    readOnly
-                    onClick={() => setIsDrawerOpen(true)}
-                    placeholder={t("requestDetails.dateTime.placeholder")}
-                    className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-blue-300 shadow-sm"
-                  />
-                </div>
+          {(requestType === "reservation" || requestType === "hospital") && (
+            <section className="flex flex-col gap-8" aria-labelledby="date-time-header">
+              <h2 className="sr-only">Reservation Information</h2>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="requestedDate" className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                  <MdCalendarToday className="text-blue-500 text-lg" />
+                  {t("requestDetails.dateTime.label")} <span className="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="requestedDate"
+                  name="requestedDate"
+                  value={form.requestedDate ? `${form.requestedDate} ${form.guests}${t("reservation.numbers") || "ppl"}` : ""}
+                  readOnly
+                  onClick={() => setIsCalendarDrawerOpen(true)}
+                  placeholder={t("requestDetails.dateTime.placeholder")}
+                  className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-blue-300 shadow-sm"
+                />
+              </div>
 
-                <div className="flex flex-col gap-2">
-                  <label htmlFor="alternativeTime" className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                    <MdCalendarToday className="text-blue-300 text-lg" />
-                    {t("requestDetails.alternativeTime.label") || "alternativeTime Time & Days"}
-                  </label>
-                  <input
-                    type="text"
-                    id="alternativeTime"
-                    name="alternativeTime"
-                    value={form.alternativeTime}
-                    onChange={handleInputChange}
-                    placeholder={t("requestDetails.alternativeTime.placeholder") || "e.g. Weekdays after 6 PM, or Weekends"}
-                    className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-blue-300 shadow-sm"
-                  />
-                </div>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="alternativeTime" className="flex items-center gap-2 text-sm font-medium text-gray-700">
+                  <MdCalendarToday className="text-blue-300 text-lg" />
+                  {t("requestDetails.alternativeTime.label") || "alternativeTime Time & Days"}
+                </label>
+                <input
+                  type="text"
+                  id="alternativeTime"
+                  name="alternativeTime"
+                  value={form.alternativeTime}
+                  onChange={handleInputChange}
+                  placeholder={t("requestDetails.alternativeTime.placeholder") || "e.g. Weekdays after 6 PM, or Weekends"}
+                  className="w-full p-4 bg-gray-50 border border-gray-100 rounded-xl outline-none focus:border-blue-300 shadow-sm"
+                />
+              </div>
 
-                <hr className="border-b border-gray-200" />
-              </section>
-            ))}
+              <hr className="border-b border-gray-200" />
+            </section>
+          )}
 
           {/* Common Questions Section */}
           <fieldset className="flex flex-col gap-4">
@@ -402,7 +380,8 @@ const RequestDetailsPage = ({ t }: TOnly) => {
           </footer>
         </form>
       </main>
-      <BookingPickerDrawer isOpen={isDrawerOpen} setIsOpen={setIsDrawerOpen} onConfirm={handleBookingConfirm} initialData={{ guests: form.guests }} />
+      <BookingPickerDrawer isOpen={isCalendarDrawerOpen} setIsOpen={setIsCalendarDrawerOpen} onConfirm={handleBookingConfirm} initialData={{ guests: form.guests }} />
+      <AddressSearchDrawer isOpen={isAddressDrawerOpen} setIsOpen={setIsAddressDrawerOpen} onSelect={handleAddressSelect} title={activeAddressType === "store" ? "searchPlace" : "searchDelivery"} />
     </div>
   )
 }

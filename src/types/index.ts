@@ -22,3 +22,22 @@ export interface BookingPickerDrawerProps {
     guests: number
   }
 }
+
+export interface AddressItem {
+  address: string
+  roadAddress: string
+  jibunAddress: string
+}
+
+export interface AddressItem {
+  address: string
+  roadAddress: string
+  jibunAddress: string
+}
+
+export interface AddressSearchDrawerProps {
+  isOpen: boolean
+  setIsOpen: (open: boolean) => void
+  onSelect: (item: AddressItem) => void
+  title: string
+}

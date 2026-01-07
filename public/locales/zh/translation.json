@@ -167,5 +167,13 @@
     "hour": "时",
     "minute": "分",
     "select": "确认"
+  },
+  "addressSearch": {
+    "addressLabel": "地址",
+    "searchPlace": "搜索地点",
+    "searchDelivery": "搜索送货地址",
+    "placeholder": "输入地点或地址",
+    "noResults": "未找到搜索结果",
+    "enterKeyword": "请输入关键词进行搜索"
   }
 }

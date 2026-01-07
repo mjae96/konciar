@@ -167,5 +167,13 @@
     "hour": "時",
     "minute": "分",
     "select": "確定"
+  },
+  "addressSearch": {
+    "addressLabel": "住所",
+    "searchPlace": "場所を検索",
+    "searchDelivery": "配送先を検索",
+    "placeholder": "場所や住所を入力してください",
+    "noResults": "検索結果がありません",
+    "enterKeyword": "検索ワードを入力してください"
   }
 }

@@ -167,5 +167,13 @@
     "hour": "hr",
     "minute": "min",
     "select": "Confirm"
+  },
+  "addressSearch": {
+    "addressLabel": "Address",
+    "searchPlace": "Search Place",
+    "searchDelivery": "Search Delivery Address",
+    "placeholder": "Enter place or address",
+    "noResults": "No results found",
+    "enterKeyword": "Eenter a keyword to search"
   }
 }
