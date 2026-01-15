@@ -14,7 +14,7 @@ const Hero = ({ t, i18n }: TAndI18n) => {
   return (
     <header className="w-full h-full px-8 py-15 flex flex-col items-center bg-[#fffdf5]">
       <figure className="w-1/5 mb-10">
-        <img src="/logo.png" alt="Concier Logo image" />
+        <img src="/logo.webp" alt="Concier Logo image" />
       </figure>
       <nav className="mb-5 text-sm" aria-label="Language selection">
         <ul className="flex gap-4 list-none">
